@@ -128,3 +128,60 @@ Time
 
 var startTiime = _.now();
 console.log(startTiime);
+
+var timer; //hold our timer value
+
+//use a window.setInterval to create a timer that runs a function every second
+
+ timer = window.setInterval(onTimer, 1000);
+
+function onTimer() {
+	//compare the value of _.now() to tart time to get elapsed time
+	//math.Floor() rounds down to the nearest integer
+	var elapsedSeconds = Math.floor((_.now() - startTime) / 1000);
+	console.log(elapsedSeconds);
+	$('#game-board h2').css("font-size", elapsedSeconds + 'px');
+}
+
+function stopTimer() {
+	window.clearInterval(timer);
+	//resetting the game board
+	$('#game-board').empty();
+}
+
+$('.jumbotron').click(stopTimer);
+
+
+
+
+//need a count and boolean 
+//elapsed time
+//how amny matches have been made (2 clicks = true THEN increase count)
+//how many pairs left   (total -made)
+//how many attempts failed (2 clicks == false THEN increase false) 
+	//can use boolean
+
+
+//total amount of unfound matches (status display to user)
+//time since the start of the game (status disolay to user)
+//numbers of wrong matches (status display to user)
+
+//for tiles - has the tile been matched
+	//if yes - show, disable new clicks
+	//if no - flip back over
+//has the tile been clicked
+//?? total clicks?
+//how many tiles have been clicked (restart to 0 after 2 clicks)
+		//set something boolean (set it to true then if 2 clicks then set it false)
+
+//disable if the tile has already been matched
+
+
+//need ability to restart game
+//need to show when the player has won
+
+//turn it back after a second.
+//switch it on a timer after clicked
+
+//make grid
+//using lodash to shuffle 
